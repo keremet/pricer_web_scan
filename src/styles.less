@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@import "fonts";
+@import "variables";
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+    background: @site-bg-color;
+    margin: 0; padding: 0;
+}
+
+body, input {
+    font-size: @site-font-size;
+}
+
+* {
+    outline: none;
+}
+
+h1, h2 {
+    margin: 3vw 0;
+}
+
+h1 {
+    font-size: @site-font-size * 1.6;
+    line-height: @site-font-size * 2;
+}
+h2 {
+    font-size: @site-font-size * 1.4;
+    line-height: @site-font-size * 1.8;
+}
+
+.container {
+    padding: @container-padding;
+}
+
+.input {
+    padding: 5vw;
+    border-radius: @site-border-radius;
+    background: white;
+
+    > input {
+        border: none;
+        padding: 0;
+        display: block;
+        width: 100%;
+        background: inherit;
+    }
+}
+
