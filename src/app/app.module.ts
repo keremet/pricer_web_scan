@@ -10,6 +10,7 @@ import { ScanViewComponent } from './views/scan-view/scan-view.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginViewComponent } from './views/login-view/login-view.component';
 import { HeaderComponent } from './controls/header/header.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './controls/header/header.component';
     BrowserModule,
     AppRoutingModule,
     ZXingScannerModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
