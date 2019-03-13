@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { BasicViewComponent } from './views/basic-view/basic-view.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BasicViewComponent
   ],
   imports: [
     BrowserModule,
