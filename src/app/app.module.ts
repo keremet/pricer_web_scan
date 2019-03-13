@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginViewComponent } from './views/login-view/login-view.component';
 import { HeaderComponent } from './controls/header/header.component';
 import { FormsModule } from '@angular/forms';
+import { BtnComponent } from './controls/btn/btn.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     BasicViewComponent,
     ScanViewComponent,
     LoginViewComponent,
-    HeaderComponent
+    HeaderComponent,
+    BtnComponent
   ],
   imports: [
     BrowserModule,
