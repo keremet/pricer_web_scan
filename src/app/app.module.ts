@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { BasicViewComponent } from './views/basic-view/basic-view.component';
 import { ScanViewComponent } from './views/scan-view/scan-view.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ScanViewComponent } from './views/scan-view/scan-view.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ZXingScannerModule
+    ZXingScannerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
