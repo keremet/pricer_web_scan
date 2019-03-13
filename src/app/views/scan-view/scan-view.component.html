@@ -1,3 +1,7 @@
-<p>
-  scan-view works!
-</p>
+<zxing-scanner #scanner 
+    (camerasFound)="camerasFoundHandler($event)" 
+    (camerasNotFound)="camerasNotFoundHandler()" 
+    (scanComplete)="scanCompleteHandler($event)"
+
+    [formats]="scannerFormats">
+</zxing-scanner>
