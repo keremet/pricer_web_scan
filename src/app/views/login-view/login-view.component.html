@@ -1,3 +1,6 @@
-<p>
-  login-view works!
-</p>
+<div class="container">
+    <h2>Вход</h2>
+    <div class="input"><input [(ngModel)]="login" placeholder="Логин"/></div>
+    <div class="input"><input [(ngModel)]="password" placeholder="Пароль"/></div>
+    <app-btn (click)="loginClicked()" [label]="'Войти'"></app-btn>
+</div>

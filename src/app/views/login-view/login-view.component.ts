@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-view',
@@ -7,9 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginViewComponent implements OnInit {
 
-  constructor() { }
+  login: string;
+  password: string;
+
+  constructor(private auth: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
+    
+  }
+
+  ngAfterViewInit() {
+    if(this.auth.loggedIn)
+      this.router.navigateByUrl('/');
+  }
+
+  loginClicked() {
+
+    this.auth.login(this.login, this.password).then(ok => {
+      if(!ok) {
+        alert('Ошибка авторизации');
+        return;
+      }
+
+      this.router.navigateByUrl('/');
+    });
+
   }
 
 }
