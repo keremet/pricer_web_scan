@@ -12,6 +12,7 @@ import { LoginViewComponent } from './views/login-view/login-view.component';
 import { HeaderComponent } from './controls/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { BtnComponent } from './controls/btn/btn.component';
+import { IndexViewComponent } from './views/index-view/index-view.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BtnComponent } from './controls/btn/btn.component';
     ScanViewComponent,
     LoginViewComponent,
     HeaderComponent,
-    BtnComponent
+    BtnComponent,
+    IndexViewComponent
   ],
   imports: [
     BrowserModule,
