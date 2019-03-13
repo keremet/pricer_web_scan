@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { BasicViewComponent } from './views/basic-view/basic-view.component';
+import { ScanViewComponent } from './views/scan-view/scan-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BasicViewComponent
+    BasicViewComponent,
+    ScanViewComponent
   ],
   imports: [
     BrowserModule,
