@@ -5,10 +5,37 @@
   <title>PricerWeb</title>
   <base href="/">
 
+  <link rel="manifest" href="/manifest.json"> 
+  <meta name="theme-color" content="white">
+
+  <!-- For iOS -->
+  <link rel="apple-touch-icon" href="/assets/icons/pwa/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/pwa/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/pwa/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/icons/pwa/apple-touch-icon-167x167.png"> 
+  <!-- iOS Splash screens -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link href="/assets/icons/pwa/ios-splash/ipadpro2_splash.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+  <link href="/assets/icons/pwa/ios-splash/ipadpro1_splash.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+  <link href="/assets/icons/pwa/ios-splash/ipad_splash.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+  <link href="/assets/icons/pwa/ios-splash/iphonex_splash.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+  <link href="/assets/icons/pwa/ios-splash/iphoneplus_splash.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+  <link href="/assets/icons/pwa/ios-splash/iphone6_splash.png" sizes="750x1334" rel="apple-touch-startup-image" />
+  <link href="/assets/icons/pwa/ios-splash/iphone5_splash.png" sizes="640x1136" rel="apple-touch-startup-image" /> 
+
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
   <app-root></app-root>
+  <noscript>Для работы приложения требуется поддержка JavaScript.</noscript>
+
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+               .register('/service-worker.js')
+               .catch(function() { console.log("Service Worker Not Registered"); });
+    }
+  </script>
 </body>
 </html>
