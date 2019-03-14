@@ -25,7 +25,7 @@ export class ScanViewComponent implements OnInit {
               private renderer: Renderer2) { }
 
   ngOnInit() {
-
+    
   }
 
   ngAfterViewInit() {
@@ -45,7 +45,7 @@ export class ScanViewComponent implements OnInit {
   reloadClicked() {
     this.currentCam = (this.currentCam == this.cameras.length - 1) 
                         ? 0 : this.currentCam + 1;
-    this.scanner.scan(this.cameras[this.currentCam].deviceId);
+    this.scanner.changeDeviceById(this.cameras[this.currentCam].deviceId);
   }
 
   camerasNotFoundHandler() {
