@@ -35,6 +35,7 @@ export class ScanViewComponent implements OnInit {
     }
     
     this.renderer.setStyle(this.scanner.previewElemRef.nativeElement, 'height', '100vh');
+    this.renderer.setStyle(this.scanner.previewElemRef.nativeElement, 'pointer-events', 'none');
   }
 
   camerasFoundHandler(cameras: MediaDeviceInfo[]) {
