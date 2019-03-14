@@ -1,8 +1,26 @@
+@import '../../../variables';
+@import '../../../mixins';
+
 :host {
     display: block;
+    position: relative;
     height: 100%;
 }
 
 zxing-scanner {
     font-size: 0;
+}
+
+.reload {
+    position: absolute;
+    right: @container-padding-h;
+    bottom: @container-padding-h;
+    background: fade(white, 60%);
+    border-radius: 50%;
+    padding: 3vw;
+    cursor: pointer;
+
+    .ic {
+        .ic-size(8vw);
+    }
 }

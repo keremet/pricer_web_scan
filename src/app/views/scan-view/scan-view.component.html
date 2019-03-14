@@ -5,3 +5,7 @@
 
     [formats]="scannerFormats">
 </zxing-scanner>
+
+<div *ngIf="cameras && cameras.length > 1" (click)="reloadClicked()" class="reload">
+    <i class="ic ic-reload"></i>
+</div>

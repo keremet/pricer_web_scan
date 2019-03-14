@@ -17,11 +17,15 @@ export class ScanViewComponent implements OnInit {
   title = 'pricer-web';
   scannerFormats = [ BarcodeFormat.QR_CODE ];
 
+  cameras: MediaDeviceInfo[];
+  private currentCam = 0;
+
   constructor(private auth: AuthService,
               private router: Router,
               private renderer: Renderer2) { }
 
   ngOnInit() {
+
   }
 
   ngAfterViewInit() {
@@ -33,13 +37,15 @@ export class ScanViewComponent implements OnInit {
     this.renderer.setStyle(this.scanner.previewElemRef.nativeElement, 'height', '100vh');
   }
 
-  camerasFoundHandler(event: MediaDeviceInfo[]) {
-    let list = '';
-    event.forEach(it => {
-      list += it.label + '\n';
-    });
-    alert(list);
-    this.scanner.scan(event[0].deviceId);
+  camerasFoundHandler(cameras: MediaDeviceInfo[]) {
+    this.cameras = cameras;
+    this.scanner.scan(cameras[0].deviceId);
+  }
+
+  reloadClicked() {
+    this.currentCam = (this.currentCam == this.cameras.length - 1) 
+                        ? 0 : this.currentCam + 1;
+    this.scanner.scan(this.cameras[this.currentCam].deviceId);
   }
 
   camerasNotFoundHandler() {
