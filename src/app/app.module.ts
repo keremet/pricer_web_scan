@@ -13,6 +13,7 @@ import { HeaderComponent } from './controls/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { BtnComponent } from './controls/btn/btn.component';
 import { IndexViewComponent } from './views/index-view/index-view.component';
+import { ReceiptsViewComponent } from './views/receipts-view/receipts-view.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { IndexViewComponent } from './views/index-view/index-view.component';
     LoginViewComponent,
     HeaderComponent,
     BtnComponent,
-    IndexViewComponent
+    IndexViewComponent,
+    ReceiptsViewComponent
   ],
   imports: [
     BrowserModule,
