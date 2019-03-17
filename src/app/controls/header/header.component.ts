@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  @Input() back = false;
+  @Input() title = '';
+  @Output() backClick = new EventEmitter();
+
+  constructor() {
+  }
 
   ngOnInit() {
+
+  }
+
+  backClicked() {
+    this.backClick.emit();
   }
 
 }
