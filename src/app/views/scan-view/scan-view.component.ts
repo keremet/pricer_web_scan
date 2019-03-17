@@ -3,6 +3,7 @@ import { BarcodeFormat } from '@zxing/library';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
+import { ReceiptsService, ReceiptResult } from 'src/app/services/receipts/receipts.service';
 
 @Component({
   selector: 'app-scan-view',
@@ -22,7 +23,8 @@ export class ScanViewComponent implements OnInit {
 
   constructor(private auth: AuthService,
               private router: Router,
-              private renderer: Renderer2) { }
+              private renderer: Renderer2,
+              private receipts: ReceiptsService) { }
 
   ngOnInit() {
     
@@ -57,8 +59,18 @@ export class ScanViewComponent implements OnInit {
     alert('Устройств не найдено');
   }
 
-  scanCompleteHandler(evt) {
-    alert(evt);
+  scanCompleteHandler(data) {
+    let res = this.receipts.addScanned(data.text);
+    switch(res) {
+      case ReceiptResult.EXISTS:
+        alert('Этот чек уже добавлен');
+        return;
+      case ReceiptResult.INCORRECT:
+        alert('Неверный QR-код');
+        return;
+    }
+
+    alert('Чек добавлен в список');
   }
 
 }
