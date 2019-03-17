@@ -44,6 +44,11 @@ const routes: Routes = [
         component: ReceiptsViewComponent,
       }
     ]
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];
 
