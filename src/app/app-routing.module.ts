@@ -4,6 +4,7 @@ import { BasicViewComponent } from './views/basic-view/basic-view.component';
 import { ScanViewComponent } from './views/scan-view/scan-view.component';
 import { LoginViewComponent } from './views/login-view/login-view.component';
 import { IndexViewComponent } from './views/index-view/index-view.component';
+import { ReceiptsViewComponent } from './views/receipts-view/receipts-view.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,20 @@ const routes: Routes = [
       {
         path: '',
         component: LoginViewComponent,
+      }
+    ]
+  },
+  {
+    path: 'receipts',
+    component: BasicViewComponent,
+    data: {
+      title: 'Мои чеки',
+      backArrow: true,
+    },
+    children: [
+      {
+        path: '',
+        component: ReceiptsViewComponent,
       }
     ]
   }
