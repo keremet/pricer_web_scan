@@ -6,6 +6,9 @@
     [formats]="scannerFormats">
 </zxing-scanner>
 
-<div *ngIf="cameras && cameras.length > 1" (click)="reloadClicked()" class="reload">
+<div class="receipts btn" (click)="listClicked()">
+    <i class="ic ic-list"></i>
+</div>
+<div *ngIf="cameras && cameras.length > 1" (click)="reloadClicked()" class="reload btn">
     <i class="ic ic-reload"></i>
 </div>

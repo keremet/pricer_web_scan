@@ -49,6 +49,10 @@ export class ScanViewComponent implements OnInit {
     this.scanner.changeDeviceById(this.cameras[this.currentCam].deviceId);
   }
 
+  listClicked() {
+    this.router.navigate(['receipts']);
+  }
+
   camerasNotFoundHandler() {
     alert('Устройств не найдено');
   }
