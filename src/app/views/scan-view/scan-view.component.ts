@@ -35,7 +35,7 @@ export class ScanViewComponent implements OnInit {
       this.router.navigateByUrl('/');
       return;
     }
-    
+
     this.renderer.setStyle(this.scanner.previewElemRef.nativeElement, 'height', '100vh');
     this.renderer.setStyle(this.scanner.previewElemRef.nativeElement, 'pointer-events', 'none');
   }
@@ -66,11 +66,11 @@ export class ScanViewComponent implements OnInit {
         alert('Этот чек уже добавлен');
         return;
       case ReceiptResult.INCORRECT:
-        alert('Неверный QR-код');
+        alert('Неподдерживаемый QR-код');
         return;
     }
 
-    alert('Чек добавлен в список');
+    alert('Чек отсканирован');
   }
 
 }
