@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { BtnComponent } from './controls/btn/btn.component';
 import { IndexViewComponent } from './views/index-view/index-view.component';
 import { ReceiptsViewComponent } from './views/receipts-view/receipts-view.component';
+import { ReceiptCardComponent } from './controls/receipts/receipt-card/receipt-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReceiptsViewComponent } from './views/receipts-view/receipts-view.compo
     HeaderComponent,
     BtnComponent,
     IndexViewComponent,
-    ReceiptsViewComponent
+    ReceiptsViewComponent,
+    ReceiptCardComponent
   ],
   imports: [
     BrowserModule,
