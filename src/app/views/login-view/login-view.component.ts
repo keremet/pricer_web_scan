@@ -26,9 +26,9 @@ export class LoginViewComponent implements OnInit {
 
   loginClicked() {
 
-    this.auth.login(this.login, this.password).then(ok => {
-      if(!ok) {
-        alert('Ошибка авторизации');
+    this.auth.login(this.login, this.password).then(res => {
+      if(!res.success) {
+        alert(res.message);
         return;
       }
 
