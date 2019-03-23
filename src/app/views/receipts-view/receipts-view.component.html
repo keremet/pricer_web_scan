@@ -1,3 +1,19 @@
-<p>
-  receipts-view works!
-</p>
+<div *ngIf="!scanned.length && !sent.length" class="list-h">
+    <h4>Чеков не найдено</h4>
+</div>
+<div *ngIf="scanned.length">    
+    <div class="list-h">
+        <h4>Неотправленные</h4>
+    </div>
+    <div *ngFor="let item of scanned" class="item">
+        <app-receipt-card [price]="item.price" [date]="item.date"></app-receipt-card>
+    </div>
+</div>
+<div *ngIf="sent.length">    
+    <div class="list-h">
+        <h4>Отправленные</h4>
+    </div>
+    <div *ngFor="let item of sent" class="item">
+        <app-receipt-card [price]="item.price" [date]="item.date"></app-receipt-card>
+    </div>
+</div>
