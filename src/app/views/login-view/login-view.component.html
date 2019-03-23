@@ -1,6 +1,6 @@
 <div class="container">
     <h2>Вход</h2>
     <div class="input"><input [(ngModel)]="login" placeholder="Логин"/></div>
-    <div class="input"><input [(ngModel)]="password" placeholder="Пароль"/></div>
+    <div class="input"><input [(ngModel)]="password" placeholder="Пароль" type="password"/></div>
     <app-btn (click)="loginClicked()" [label]="'Войти'"></app-btn>
 </div>
